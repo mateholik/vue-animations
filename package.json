@@ -27,6 +27,9 @@
   },
   "eslintConfig": {
     "root": true,
+    "globals": {
+      "_": true
+    },
     "env": {
       "node": true
     },
@@ -37,7 +40,10 @@
     "parserOptions": {
       "parser": "@babel/eslint-parser"
     },
-    "rules": {}
+    "rules": {
+      "vue/multi-word-component-names": "off",
+      "no-undef": "off"
+    }
   },
   "browserslist": [
     "> 1%",
