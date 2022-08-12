@@ -6,7 +6,11 @@
           toggle example 8
         </button>
         <div class="max-w-md">
-          <div class="border-4 border-solid border-green-300 p-4"></div>
+          <div class="border-4 border-solid border-green-300 p-4">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Itaque
+            neque quaerat labore, deleniti totam odit possimus facere voluptate
+            nam voluptatum.
+          </div>
 
           <transition name="collapse">
             <div

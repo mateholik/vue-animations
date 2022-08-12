@@ -2,9 +2,9 @@
   <section>
     <div class="container">
       <div class="content">
-        <button @click="exampleThreeShow = !exampleThreeShow">toggle</button>
+        <button @click="show = !show">toggle</button>
         <Transition name="bounce">
-          <h1 v-show="exampleThreeShow">Example 3</h1>
+          <h1 v-show="show">Example 3</h1>
         </Transition>
       </div>
     </div>
@@ -15,7 +15,7 @@
 export default {
   data() {
     return {
-      exampleThreeShow: true,
+      show: true,
     };
   },
 };

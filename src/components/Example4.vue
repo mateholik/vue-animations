@@ -2,12 +2,12 @@
   <section>
     <div class="container">
       <div class="content">
-        <button @click="exampleFourShow = !exampleFourShow">toggle</button>
+        <button @click="show = !show">toggle</button>
         <Transition
           enter-active-class="animated tada"
-          leave-active-class="animated bounceOutRight"
+          leave-active-class="animated fadeOutUpBig"
         >
-          <h1 v-show="exampleFourShow">Example 4</h1>
+          <h1 v-show="show">Example 4</h1>
         </Transition>
       </div>
     </div>
@@ -18,7 +18,7 @@
 export default {
   data() {
     return {
-      exampleFourShow: true,
+      show: true,
     };
   },
 };

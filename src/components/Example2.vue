@@ -2,9 +2,9 @@
   <section>
     <div class="container">
       <div class="content">
-        <button @click="exampleTwoShow = !exampleTwoShow">toggle</button>
+        <button @click="show = !show">toggle</button>
         <Transition name="slide-fade">
-          <h1 v-show="exampleTwoShow">Example 2</h1>
+          <h1 v-show="show">Example 2</h1>
         </Transition>
       </div>
     </div>
@@ -15,7 +15,7 @@
 export default {
   data() {
     return {
-      exampleTwoShow: true,
+      show: true,
     };
   },
 };

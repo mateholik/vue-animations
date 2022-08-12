@@ -8,6 +8,8 @@
     <Example6 />
     <Example7 />
     <Example8 />
+    <Example9 />
+    <Example10 />
   </div>
 </template>
 
@@ -20,6 +22,8 @@ import Example5 from "./components/Example5.vue";
 import Example6 from "./components/Example6.vue";
 import Example7 from "./components/Example7.vue";
 import Example8 from "./components/Example8.vue";
+import Example9 from "./components/Example9.vue";
+import Example10 from "./components/Example10.vue";
 export default {
   components: {
     Example1,
@@ -30,6 +34,8 @@ export default {
     Example6,
     Example7,
     Example8,
+    Example9,
+    Example10,
   },
 };
 </script>

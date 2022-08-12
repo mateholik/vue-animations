@@ -2,7 +2,7 @@
   <section>
     <div class="container">
       <div class="content">
-        <button v-on:click="shuffle">Shuffle</button>
+        <button v-on:click="shuffle">Shuffle example 6</button>
         <button v-on:click="add">Add</button>
         <button v-on:click="remove">Remove</button>
         <transition-group name="list-complete" tag="p">
