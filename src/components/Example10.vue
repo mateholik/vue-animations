@@ -11,9 +11,9 @@
           </div>
 
           <div
-            class="h-auto overflow-hidden duration-500"
+            class="h-auto overflow-hidden"
+            style="transition: height 0.3s ease-out"
             ref="box"
-            :style="`height: ${height}`"
           >
             <p class="p-4 border-4 border-solid border-red-300">
               Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores
@@ -42,34 +42,39 @@ export default {
       show: false,
     };
   },
-  computed: {
-    height() {
-      return this.show ? this.$refs.box.clientHeight + "px" : 0;
+  watch: {
+    show(newVal) {
+      newVal ? this.collapseSection() : this.expandSection();
     },
   },
   methods: {
     expandSection() {
-      this.$refs.box.style.height = this.$refs.box.clientHeight + "px";
+      const item = this.$refs.box;
+
+      const itemHeight = item.scrollHeight;
+      console.log("itemHeight", itemHeight);
+
+      item.style.height = itemHeight + "px";
+
+      item.addEventListener("transitionend", () => {
+        console.log(0);
+        item.removeEventListener("transitionend", arguments.callee);
+        item.style.height = null;
+        console.log(1);
+      });
     },
     collapseSection() {
-      // get the height of the element's inner content, regardless of its actual size
-      var sectionHeight = this.$refs.box.clientHeight;
+      const item = this.$refs.box;
 
-      // temporarily disable all css transitions
-      var elementTransition = element.style.transition;
-      this.$refs.box.style.transition = "";
+      const itemHeight = item.scrollHeight;
+      const itemTransition = item.style.transition;
+      item.style.transition = "";
 
-      // on the next frame (as soon as the previous style change has taken effect),
-      // explicitly set the element's height to its current pixel height, so we
-      // aren't transitioning out of 'auto'
-      requestAnimationFrame(function () {
-        sectionHeight.style.height = sectionHeight + "px";
-        sectionHeight.style.transition = elementTransition;
-
-        // on the next frame (as soon as the previous style change has taken effect),
-        // have the element transition to height: 0
-        requestAnimationFrame(function () {
-          sectionHeight.style.height = 0 + "px";
+      requestAnimationFrame(() => {
+        item.style.height = itemHeight + "px";
+        item.style.transition = itemTransition;
+        requestAnimationFrame(() => {
+          item.style.height = 0 + "px";
         });
       });
     },
