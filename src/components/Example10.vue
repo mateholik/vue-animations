@@ -52,15 +52,11 @@ export default {
       const item = this.$refs.box;
 
       const itemHeight = item.scrollHeight;
-      console.log("itemHeight", itemHeight);
 
       item.style.height = itemHeight + "px";
 
-      item.addEventListener("transitionend", () => {
-        console.log(0);
-        item.removeEventListener("transitionend", arguments.callee);
-        item.style.height = null;
-        console.log(1);
+      item.addEventListener("transitionend", () => (item.style.height = null), {
+        once: true,
       });
     },
     collapseSection() {
