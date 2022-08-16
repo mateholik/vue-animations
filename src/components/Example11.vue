@@ -29,28 +29,6 @@
             </p>
           </div>
         </div>
-        <!-- <div class="flex flex-col text-2xl" style="height: 300px">
-          <div class="flex-1 bg-red-200 overflow-hidden">
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab,
-              assumenda?
-            </p>
-          </div>
-          <div
-            class="flex-1 bg-green-200 overflow-hidden transition-all duration-500"
-            :style="show ? 'flex: 1' : 'flex: 0'"
-          >
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-            Consequatur aut est cumque modi minima! Repellendus esse provident
-            molestias soluta quo.
-          </div>
-          <div class="flex-1 bg-blue-200 overflow-hidden">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Repudiandae recusandae delectus quibusdam mollitia ad dolore
-            corrupti, praesentium maiores ipsa laboriosam qui explicabo aperiam
-            fugiat quis reprehenderit at! Ducimus, itaque commodi!
-          </div>
-        </div> -->
       </div>
     </div>
   </section>

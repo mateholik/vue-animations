@@ -5,12 +5,8 @@
         <button v-on:click="shuffle">Shuffle example 6</button>
         <button v-on:click="add">Add</button>
         <button v-on:click="remove">Remove</button>
-        <transition-group name="list-complete" tag="p">
-          <span
-            v-for="item in items"
-            v-bind:key="item"
-            class="list-complete-item"
-          >
+        <transition-group name="random" tag="p">
+          <span v-for="item in items" v-bind:key="item" class="random-item">
             {{ item }}
           </span>
         </transition-group>
@@ -45,17 +41,17 @@ export default {
 </script>
 
 <style>
-.list-complete-item {
+.random-item {
   transition: all 1s;
   display: inline-block;
   margin-right: 10px;
 }
-.list-complete-enter, .list-complete-leave-to
-/* .list-complete-leave-active below version 2.1.8 */ {
+.random-enter,
+.random-leave-to {
   opacity: 0;
   transform: translateY(30px);
 }
-.list-complete-leave-active {
+.random-leave-active {
   position: absolute;
 }
 </style>

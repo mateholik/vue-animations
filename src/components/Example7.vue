@@ -4,7 +4,7 @@
       <div class="content">
         <button @click="show = !show">toggle example 7</button>
         <br />
-        <Transition name="fade" mode="out-in">
+        <Transition name="fading" mode="out-in">
           <button v-if="show" key="save">Save</button>
           <button v-else key="edit">Edit</button>
         </Transition>
@@ -23,4 +23,18 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+.fading-enter-active,
+.fading-leave-active {
+  transition: opacity 1s;
+}
+.fading-enter,
+.fading-leave-to {
+  opacity: 0;
+  /* position: absolute; */
+}
+.fading-enter-to,
+.fading-leave {
+  opacity: 1;
+}
+</style>

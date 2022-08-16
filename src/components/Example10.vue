@@ -51,9 +51,7 @@ export default {
     expandSection() {
       const item = this.$refs.box;
 
-      const itemHeight = item.scrollHeight;
-
-      item.style.height = itemHeight + "px";
+      item.style.height = item.scrollHeight + "px";
 
       item.addEventListener("transitionend", () => (item.style.height = null), {
         once: true,
@@ -61,13 +59,12 @@ export default {
     },
     collapseSection() {
       const item = this.$refs.box;
-
-      const itemHeight = item.scrollHeight;
       const itemTransition = item.style.transition;
+
       item.style.transition = "";
 
       requestAnimationFrame(() => {
-        item.style.height = itemHeight + "px";
+        item.style.height = item.scrollHeight + "px";
         item.style.transition = itemTransition;
         requestAnimationFrame(() => {
           item.style.height = 0 + "px";

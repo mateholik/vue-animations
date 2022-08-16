@@ -26,7 +26,12 @@ export default {
 .fade-leave-active {
   transition: opacity 2s;
 }
-.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+.fade-enter,
+.fade-leave-to {
   opacity: 0;
+}
+.fade-enter-to,
+.fade-leave {
+  opacity: 1;
 }
 </style>
